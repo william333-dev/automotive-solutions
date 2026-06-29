@@ -162,6 +162,13 @@
   .bf .btn{width:100%;margin-top:18px}
   .bf .note{font-size:.8rem;color:var(--grey);text-align:center;margin-top:12px;display:flex;gap:7px;align-items:flex-start;justify-content:center}
   .bf .note svg{width:15px;height:15px;stroke:var(--blue);fill:none;stroke-width:2;flex:none;margin-top:2px}
+  /* WhatsApp booking card */
+  .wacard{text-align:center}
+  .wa-logo{display:inline-grid;place-items:center;width:66px;height:66px;margin:0 auto 6px}
+  .wa-logo svg{width:66px;height:66px}
+  .wacard h3{margin-bottom:4px}
+  .wa-btn{width:100%;background:#25D366;color:#fff;font-size:1.04rem;padding:16px 24px}
+  .wa-btn:hover{background:#1ebe57;box-shadow:0 12px 26px -12px rgba(37,211,102,.8)}
 
   /* ---------- REVIEWS ---------- */
   .reviews{background:var(--bg2)}
@@ -410,46 +417,34 @@
 <section class="sec booking" id="book">
   <div class="wrap">
     <div class="booking-copy fade">
-      <span class="kicker">Book Online</span>
-      <h2 class="cond">Book a WOF or service in under a minute</h2>
-      <p>No more phone tag. Tell us your vehicle and when suits, and we'll come back to confirm your booking.</p>
-      <p>We're known for fitting people in at short notice — booking online just makes it even easier to get sorted.</p>
+      <span class="kicker">Book in Seconds</span>
+      <h2 class="cond">Message us to book a WOF or service</h2>
+      <p>No more phone tag. Send us a quick WhatsApp with your vehicle and what you need — we'll reply to confirm a time that suits.</p>
+      <p>We're known for fitting people in at short notice — a quick message just makes it even easier to get sorted.</p>
       <div class="callalt">
         Prefer to talk? Call us anytime on<br>
         <a href="tel:+6434640694">📞 03 464 0694</a>
       </div>
     </div>
-    <form class="bf fade" onsubmit="return bookSubmit(event)">
-      <h3 class="cond">Request a Booking</h3>
-      <p class="bf-sub">We'll confirm your time by phone.</p>
-      <div class="row">
-        <div><label for="bn">Your name</label><input id="bn" type="text" placeholder="Full name" required></div>
-        <div><label for="bp">Phone</label><input id="bp" type="tel" placeholder="0xx xxx xxxx" required></div>
-      </div>
-      <label for="bv">Vehicle (make / model / year)</label>
-      <input id="bv" type="text" placeholder="e.g. Toyota Corolla 2015">
-      <div class="row">
-        <div>
-          <label for="bs">Service needed</label>
-          <select id="bs">
-            <option>WOF (Warrant of Fitness)</option>
-            <option>Service / scheduled service</option>
-            <option>Mechanical repair</option>
-            <option>Tyres</option>
-            <option>Battery</option>
-            <option>Brakes / clutch</option>
-            <option>Exhaust</option>
-            <option>Diagnostics</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div><label for="bd">Preferred day</label><input id="bd" type="text" placeholder="e.g. Wed or Thu am"></div>
-      </div>
-      <label for="bm">Anything else? (optional)</label>
-      <textarea id="bm" rows="2" placeholder="Tell us what's going on with the vehicle…"></textarea>
-      <button class="btn btn-gold" type="submit">Request booking</button>
-      <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg> Sample form — the live version will send straight to the workshop. We'll confirm by phone.</p>
-    </form>
+    <div class="bf wacard fade">
+      <span class="wa-logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z" fill="#25D366"/><path d="M16 5.5c5.6 0 10 4.4 10 10s-4.4 10-10 10c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.6.9.9-3.5-.3-.4A9.9 9.9 0 0 1 6 15.5c0-5.6 4.4-10 10-10z" fill="#fff"/><path d="M12.3 9.8c-.2-.5-.4-.5-.6-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.6-.9-2.2z" fill="#25D366"/></svg>
+      </span>
+      <h3 class="cond">Book via WhatsApp</h3>
+      <p class="bf-sub">Tap below — it opens WhatsApp with a message ready to send. We'll reply to confirm your time.</p>
+      <!-- CONFIRM: replace 64210000000 with Greg's real MOBILE (021/022/027… → drop leading 0, prefix 64). Landline 03 464 0694 will NOT work on WhatsApp. -->
+      <a class="btn wa-btn" id="waBtn"
+         href="https://wa.me/64210000000?text=Hi%20Automotive%20Solutions%2C%20I%27d%20like%20to%20book%20a%20WOF%20or%20service.%0AVehicle%3A%20%0AService%20needed%3A%20%0APreferred%20day%2Ftime%3A%20%0AThanks%21"
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" style="stroke:none;fill:#fff;width:20px;height:20px"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.6 4.7-1.2A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.5.6.7-2.4-.2-.4A8 8 0 0 1 12 4zm-2.9 3.6c-.2 0-.4 0-.6.3-.2.2-.8.7-.8 1.8s.8 2.1.9 2.2c.1.2 1.6 2.5 3.9 3.4 1.9.7 2.3.6 2.7.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3c-.3-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.2.2-.5.1-.3-.2-1.1-.4-2-1.3-.7-.6-1.2-1.4-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.8-.2-.4-.3-.4-.5-.4z"/></svg>
+        Message us on WhatsApp
+      </a>
+      <a class="btn btn-out wa-call" href="tel:+6434640694" style="color:var(--blue-d);border-color:var(--blue);width:100%;margin-top:11px">
+        <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Or call 03 464 0694
+      </a>
+      <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg> Sample — WhatsApp connects once Greg's mobile is added. The landline above works for calls now.</p>
+    </div>
   </div>
 </section>
 
