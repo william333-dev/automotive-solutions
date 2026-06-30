@@ -184,11 +184,10 @@
   .tb-google b{font-family:'Barlow Condensed',sans-serif;color:var(--blue-d);font-size:1.6rem;line-height:1}
   .tb-google small{display:block;color:var(--grey);font-size:.78rem}
   .tb-badge{display:flex;align-items:center;gap:12px}
-  /* TRUST BADGE placeholder — drop the official PNG/SVG in, then remove the .tb-ph box */
-  .tb-ph{width:78px;height:62px;border:2px dashed var(--blue);border-radius:10px;display:grid;place-items:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--blue);background:var(--blue-l);letter-spacing:.04em;flex:none}
   .tb-badge small{color:var(--grey);font-size:.82rem;line-height:1.35}
   .tb-badge small b{display:block;color:var(--blue-d);font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;text-transform:uppercase;letter-spacing:.03em}
   .tb-sep{width:1px;height:48px;background:var(--line)}
+  .tb-logo{height:60px;width:auto;display:block;flex:none}
 
   /* ---------- MEET THE TEAM ---------- */
   .team{background:var(--bg2)}
@@ -207,8 +206,8 @@
   .btn-email:hover{background:var(--blue);color:#fff}
   .btn-email svg{stroke:currentColor}
   .contact-cta{display:flex;gap:12px;flex-wrap:wrap}
-  .f-trust{display:flex;gap:12px;align-items:center;margin-top:18px}
-  .f-trust .tb-ph{width:56px;height:44px;font-size:1.05rem;border-color:#5b82ad;color:#cfe0f0;background:rgba(255,255,255,.06)}
+  .f-trust{display:flex;gap:14px;align-items:center;margin-top:18px}
+  .f-badge{height:48px;width:auto;display:block}
   .topbar .tb-r a svg{width:14px;height:14px;vertical-align:-2px;stroke:#fff;fill:none;stroke-width:2}
 
   /* ---------- REVIEWS ---------- */
@@ -372,16 +371,14 @@
       <div><b>4.9</b><small>Google rated</small></div>
     </div>
     <span class="tb-sep"></span>
-    <!-- TRUST BADGE TO SWAP: drop in the official MTA (Motor Trade Association NZ) logo, then delete the .tb-ph box -->
     <div class="tb-badge">
-      <span class="tb-ph">MTA</span>
-      <small><b>MTA Approved</b>Motor Trade Association<br>official logo to add</small>
+      <img class="tb-logo" src="mta-badge.png" alt="MTA — Motor Trade Association approved" width="439" height="480">
+      <small><b>MTA Approved</b>Motor Trade Association</small>
     </div>
     <span class="tb-sep"></span>
-    <!-- TRUST BADGE TO SWAP: drop in the official AA Battery Service logo, then delete the .tb-ph box -->
     <div class="tb-badge">
-      <span class="tb-ph">AA</span>
-      <small><b>AA Battery Service</b>Authorised supplier<br>official logo to add</small>
+      <img class="tb-logo" src="aa-badge.png" alt="AA Battery Service authorised supplier" width="480" height="480">
+      <small><b>AA Battery Service</b>Authorised supplier</small>
     </div>
   </div>
 </section>
@@ -722,10 +719,8 @@
         <span class="footer-logo"><img src="logo-main.png" alt="Automotive Solutions Māori Hill"></span>
         <p>Your honest, family-run local mechanic in Māori Hill. WOF, servicing and full mechanical repairs — MTA &amp; AA approved.</p>
         <div class="f-trust">
-          <!-- TRUST BADGE TO SWAP: official MTA logo -->
-          <span class="tb-ph" title="MTA — official logo to add">MTA</span>
-          <!-- TRUST BADGE TO SWAP: official AA Battery Service logo -->
-          <span class="tb-ph" title="AA Battery Service — official logo to add">AA</span>
+          <img class="f-badge" src="mta-badge.png" alt="MTA approved" width="439" height="480">
+          <img class="f-badge" src="aa-badge.png" alt="AA Battery Service" width="480" height="480">
         </div>
       </div>
       <div class="fcol">
