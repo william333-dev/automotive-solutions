@@ -170,6 +170,47 @@
   .wa-btn{width:100%;background:#25D366;color:#fff;font-size:1.04rem;padding:16px 24px}
   .wa-btn:hover{background:#1ebe57;box-shadow:0 12px 26px -12px rgba(37,211,102,.8)}
 
+  /* ---------- REAL LOGO (converted from client PDFs) ---------- */
+  .brand-logo{height:46px;width:auto;display:block}
+  .hero-stamp{position:absolute;top:38px;right:22px;width:122px;height:122px;padding:15px;background:rgba(255,255,255,.94);border-radius:50%;box-shadow:0 14px 34px -12px rgba(0,0,0,.45);z-index:4}
+  .footer-logo{background:#fff;border-radius:12px;padding:11px 16px;display:inline-block;margin-bottom:6px}
+  .footer-logo img{height:40px;width:auto;display:block}
+
+  /* ---------- TRUST BAR (recognised logos) ---------- */
+  .trustbar{background:#fff;border-bottom:1px solid var(--line)}
+  .trustbar .wrap{display:flex;align-items:center;justify-content:center;gap:20px 38px;flex-wrap:wrap;padding:26px 22px}
+  .tb-google{display:flex;align-items:center;gap:11px}
+  .tb-google .gstar{color:var(--gold);font-size:1.15rem;letter-spacing:2px;line-height:1}
+  .tb-google b{font-family:'Barlow Condensed',sans-serif;color:var(--blue-d);font-size:1.6rem;line-height:1}
+  .tb-google small{display:block;color:var(--grey);font-size:.78rem}
+  .tb-badge{display:flex;align-items:center;gap:12px}
+  /* TRUST BADGE placeholder — drop the official PNG/SVG in, then remove the .tb-ph box */
+  .tb-ph{width:78px;height:62px;border:2px dashed var(--blue);border-radius:10px;display:grid;place-items:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--blue);background:var(--blue-l);letter-spacing:.04em;flex:none}
+  .tb-badge small{color:var(--grey);font-size:.82rem;line-height:1.35}
+  .tb-badge small b{display:block;color:var(--blue-d);font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;text-transform:uppercase;letter-spacing:.03em}
+  .tb-sep{width:1px;height:48px;background:var(--line)}
+
+  /* ---------- MEET THE TEAM ---------- */
+  .team{background:var(--bg2)}
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .tcard:hover{transform:translateY(-5px);box-shadow:0 22px 46px -26px rgba(5,43,80,.5)}
+  .tcard .tphoto{aspect-ratio:1/1;overflow:hidden;background:var(--blue-l)}
+  .tcard .tphoto img{width:100%;height:100%;object-fit:cover}
+  .tcard .tbody{padding:22px 22px 26px}
+  .tcard h3{font-size:1.45rem;color:var(--blue-d)}
+  .tcard .role{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-top:3px}
+  .tcard p{color:var(--grey);font-size:.96rem;margin-top:12px}
+
+  /* ---------- EMAIL BUTTON ---------- */
+  .btn-email{background:#fff;color:var(--blue-d);border:2px solid var(--blue)}
+  .btn-email:hover{background:var(--blue);color:#fff}
+  .btn-email svg{stroke:currentColor}
+  .contact-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .f-trust{display:flex;gap:12px;align-items:center;margin-top:18px}
+  .f-trust .tb-ph{width:56px;height:44px;font-size:1.05rem;border-color:#5b82ad;color:#cfe0f0;background:rgba(255,255,255,.06)}
+  .topbar .tb-r a svg{width:14px;height:14px;vertical-align:-2px;stroke:#fff;fill:none;stroke-width:2}
+
   /* ---------- REVIEWS ---------- */
   .reviews{background:var(--bg2)}
   .rating-hero{text-align:center;margin-bottom:46px}
@@ -238,12 +279,17 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:980px){
-    .sgrid,.wgrid{grid-template-columns:repeat(2,1fr)}
+    .sgrid,.wgrid,.tgrid{grid-template-columns:repeat(2,1fr)}
     .rgrid{grid-template-columns:1fr}
     .about-grid,.booking .wrap,.cgrid{grid-template-columns:1fr;gap:40px}
     .fgrid{grid-template-columns:1fr 1fr}
+    .hero-stamp{width:88px;height:88px;padding:11px;top:20px;right:16px}
   }
   @media(max-width:680px){
+    .tgrid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
+    .tb-sep{display:none}
+    .brand-logo{height:38px}
+    .hero-stamp{width:64px;height:64px;padding:8px;top:14px;right:12px}
     .nav-links{position:fixed;inset:0 0 0 auto;width:min(300px,82%);background:#fff;flex-direction:column;align-items:flex-start;justify-content:center;padding:40px;gap:22px;transform:translateX(100%);transition:transform .35s;box-shadow:-20px 0 60px -30px rgba(0,0,0,.4);z-index:75}
     .nav-links.open{transform:none}
     .burger{display:flex;z-index:76}
@@ -267,6 +313,7 @@
     <div class="tb-l">📍 567 Highgate, Māori Hill, Dunedin · MTA &amp; AA Approved</div>
     <div class="tb-r">
       <span class="star">★ 4.9</span>
+      <a href="mailto:maorihill@outlook.co.nz?subject=Enquiry%20-%20Automotive%20Solutions%20Maori%20Hill&body=Hi%20Automotive%20Solutions%2C%0A%0AI%27d%20like%20to%20enquire%20about%3A%20%0A%0AVehicle%3A%20%0APreferred%20day%2Ftime%3A%20%0A%0AThanks%21"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 7-10 6L2 7"/></svg> Email us</a>
       <a href="tel:+6434640694">📞 03 464 0694</a>
     </div>
   </div>
@@ -276,12 +323,12 @@
 <header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="brand">
-      <!-- LOGO TO SWAP: real circular blue badge (road/highway curving into distance + swoosh) -->
-      <span class="badge" aria-hidden="true"></span>
-      <span class="brand-txt"><b>Automotive Solutions</b><span>Māori Hill · Dunedin</span></span>
+      <!-- Real logo — converted from client-supplied PDF (Automotive Solutions Maori Hill) -->
+      <img class="brand-logo" src="logo-main.png" alt="Automotive Solutions Māori Hill" width="1424" height="434">
     </a>
     <nav class="nav-links" id="menu">
       <a href="#about">About</a>
+      <a href="#team">Team</a>
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
@@ -299,6 +346,8 @@
          onerror="this.src='https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1700&q=80'">
   </div>
   <div class="wrap">
+    <!-- Real round logo — converted from client-supplied PDF (round light-blue badge) -->
+    <img class="hero-stamp" src="logo-round.png" alt="Automotive Solutions Māori Hill badge">
     <span class="tagpill"><span class="dot"></span> Family-run · Trusted Māori Hill mechanic</span>
     <h1>Honest, reliable car care in <em>Māori Hill</em>, Dunedin.</h1>
     <p class="sub">WOF, servicing and full mechanical repairs for every vehicle — done properly, priced fairly, by your local family-run workshop.</p>
@@ -311,6 +360,28 @@
       <div class="hb"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><span><b>4.9★</b>Google rated</span></div>
       <div class="hb"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="M9 12l2 2 4-4"/></svg><span><b>MTA &amp; AA</b>Approved</span></div>
       <div class="hb"><svg viewBox="0 0 24 24"><path d="M3 13l2-5h14l2 5M5 13h14v5H5zM7 18v2M17 18v2"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg><span><b>All vehicles</b>New &amp; used</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR (recognised logos) ================= -->
+<section class="trustbar">
+  <div class="wrap">
+    <div class="tb-google">
+      <span class="gstar">★★★★★</span>
+      <div><b>4.9</b><small>Google rated</small></div>
+    </div>
+    <span class="tb-sep"></span>
+    <!-- TRUST BADGE TO SWAP: drop in the official MTA (Motor Trade Association NZ) logo, then delete the .tb-ph box -->
+    <div class="tb-badge">
+      <span class="tb-ph">MTA</span>
+      <small><b>MTA Approved</b>Motor Trade Association<br>official logo to add</small>
+    </div>
+    <span class="tb-sep"></span>
+    <!-- TRUST BADGE TO SWAP: drop in the official AA Battery Service logo, then delete the .tb-ph box -->
+    <div class="tb-badge">
+      <span class="tb-ph">AA</span>
+      <small><b>AA Battery Service</b>Authorised supplier<br>official logo to add</small>
     </div>
   </div>
 </section>
@@ -345,6 +416,56 @@
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> MTA &amp; AA approved workshop</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> All makes &amp; models, new and used</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEET THE TEAM ================= -->
+<section class="sec team" id="team">
+  <div class="wrap">
+    <div class="sec-head center fade">
+      <span class="kicker">Meet the Team</span>
+      <h2 class="cond">The team on the floor</h2>
+      <p>Friendly, qualified and local — the people who'll be looking after your vehicle.</p>
+    </div>
+    <div class="tgrid">
+      <!-- CONFIRM: real name, role & blurb for each — client to supply -->
+      <div class="tcard fade">
+        <div class="tphoto">
+          <!-- PHOTO TO SWAP: real photo of team member 1 -->
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Team member"
+               onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="tbody">
+          <h3>Greg</h3>
+          <div class="role">Owner / Mechanic <!-- CONFIRM --></div>
+          <p>Owner and head mechanic — Greg's the one keeping Māori Hill on the road with honest advice and quality work. <!-- CONFIRM: real blurb --></p>
+        </div>
+      </div>
+      <div class="tcard fade">
+        <div class="tphoto">
+          <!-- PHOTO TO SWAP: real photo of team member 2 -->
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Team member"
+               onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="tbody">
+          <h3>Team Member <!-- CONFIRM: name --></h3>
+          <div class="role">Mechanic <!-- CONFIRM --></div>
+          <p>A short, friendly line about this team member — experience, what they're known for, a personal touch. <!-- CONFIRM: real blurb --></p>
+        </div>
+      </div>
+      <div class="tcard fade">
+        <div class="tphoto">
+          <!-- PHOTO TO SWAP: real photo of team member 3 -->
+          <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=80" alt="Team member"
+               onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="tbody">
+          <h3>Team Member <!-- CONFIRM: name --></h3>
+          <div class="role">Mechanic <!-- CONFIRM --></div>
+          <p>A short, friendly line about this team member — experience, what they're known for, a personal touch. <!-- CONFIRM: real blurb --></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -417,34 +538,55 @@
 <section class="sec booking" id="book">
   <div class="wrap">
     <div class="booking-copy fade">
-      <span class="kicker">Book in Seconds</span>
-      <h2 class="cond">Message us to book a WOF or service</h2>
-      <p>No more phone tag. Send us a quick WhatsApp with your vehicle and what you need — we'll reply to confirm a time that suits.</p>
-      <p>We're known for fitting people in at short notice — a quick message just makes it even easier to get sorted.</p>
+      <span class="kicker">Book a Service</span>
+      <h2 class="cond">Request a booking online</h2>
+      <p>No more phone tag. Tell us what you need and your preferred day, and we'll get back to you to confirm a time that suits.</p>
+      <p>We're known for fitting people in at short notice — booking online just makes it even easier to get sorted.</p>
       <div class="callalt">
         Prefer to talk? Call us anytime on<br>
         <a href="tel:+6434640694">📞 03 464 0694</a>
       </div>
     </div>
-    <div class="bf wacard fade">
-      <span class="wa-logo" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z" fill="#25D366"/><path d="M16 5.5c5.6 0 10 4.4 10 10s-4.4 10-10 10c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.6.9.9-3.5-.3-.4A9.9 9.9 0 0 1 6 15.5c0-5.6 4.4-10 10-10z" fill="#fff"/><path d="M12.3 9.8c-.2-.5-.4-.5-.6-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.6-.9-2.2z" fill="#25D366"/></svg>
-      </span>
-      <h3 class="cond">Book via WhatsApp</h3>
-      <p class="bf-sub">Tap below — it opens WhatsApp with a message ready to send. We'll reply to confirm your time.</p>
-      <!-- CONFIRM: replace 64210000000 with Greg's real MOBILE (021/022/027… → drop leading 0, prefix 64). Landline 03 464 0694 will NOT work on WhatsApp. -->
-      <a class="btn wa-btn" id="waBtn"
-         href="https://wa.me/64210000000?text=Hi%20Automotive%20Solutions%2C%20I%27d%20like%20to%20book%20a%20WOF%20or%20service.%0AVehicle%3A%20%0AService%20needed%3A%20%0APreferred%20day%2Ftime%3A%20%0AThanks%21"
-         target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" style="stroke:none;fill:#fff;width:20px;height:20px"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.6 4.7-1.2A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.5.6.7-2.4-.2-.4A8 8 0 0 1 12 4zm-2.9 3.6c-.2 0-.4 0-.6.3-.2.2-.8.7-.8 1.8s.8 2.1.9 2.2c.1.2 1.6 2.5 3.9 3.4 1.9.7 2.3.6 2.7.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3c-.3-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.2.2-.5.1-.3-.2-1.1-.4-2-1.3-.7-.6-1.2-1.4-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.8-.2-.4-.3-.4-.5-.4z"/></svg>
-        Message us on WhatsApp
-      </a>
-      <a class="btn btn-out wa-call" href="tel:+6434640694" style="color:var(--blue-d);border-color:var(--blue);width:100%;margin-top:11px">
-        <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-        Or call 03 464 0694
-      </a>
-      <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg> Sample — WhatsApp connects once Greg's mobile is added. The landline above works for calls now.</p>
-    </div>
+    <form class="bf fade" id="bookForm" onsubmit="return bookSubmit(event)">
+      <h3 class="cond">Book a WOF or Service</h3>
+      <p class="bf-sub">Send us a request — we'll be in touch to confirm your booking.</p>
+
+      <label for="bk-service">What do you need?</label>
+      <select id="bk-service" name="service" required>
+        <option value="" disabled selected>Choose a service…</option>
+        <option>WOF — Warrant of Fitness</option>
+        <option>Full Service</option>
+        <option>Tyres</option>
+        <option>Battery</option>
+        <option>Brakes &amp; Clutch</option>
+        <option>Exhaust</option>
+        <option>Diagnostics</option>
+        <option>Other</option>
+      </select>
+
+      <label for="bk-date">Preferred day</label>
+      <input type="date" id="bk-date" name="date" required>
+
+      <div class="row">
+        <div>
+          <label for="bk-name">Your name</label>
+          <input id="bk-name" name="name" type="text" required placeholder="Full name">
+        </div>
+        <div>
+          <label for="bk-phone">Phone</label>
+          <input id="bk-phone" name="phone" type="tel" required placeholder="Mobile or landline">
+        </div>
+      </div>
+
+      <label for="bk-vehicle">Vehicle</label>
+      <input id="bk-vehicle" name="vehicle" type="text" required placeholder="e.g. 2014 Toyota Corolla">
+
+      <label for="bk-notes">Notes (optional)</label>
+      <textarea id="bk-notes" name="notes" rows="3" placeholder="Anything we should know?"></textarea>
+
+      <button type="submit" class="btn">Request booking</button>
+      <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg> This sends a booking <b style="margin:0 3px">request</b>, not an instant confirmed booking — we'll be in touch to confirm. (Demo form — the live version emails your request straight to the workshop.)</p>
+    </form>
   </div>
 </section>
 
@@ -550,10 +692,16 @@
           </div>
         </div>
         <div class="crow" style="background:transparent;border:none;padding:8px 0">
-          <a href="https://www.facebook.com/p/Automotive-Solutions-Maori-Hill-100039975045427/" target="_blank" rel="noopener" class="btn" style="background:#1877f2">
-            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff;stroke:none"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
-            Follow us on Facebook
-          </a>
+          <div class="contact-cta">
+            <a href="mailto:maorihill@outlook.co.nz?subject=Enquiry%20-%20Automotive%20Solutions%20Maori%20Hill&body=Hi%20Automotive%20Solutions%2C%0A%0AI%27d%20like%20to%20enquire%20about%3A%20%0A%0AVehicle%3A%20%0APreferred%20day%2Ftime%3A%20%0A%0AThanks%21" class="btn btn-email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 7-10 6L2 7"/></svg>
+              Email us
+            </a>
+            <a href="https://www.facebook.com/p/Automotive-Solutions-Maori-Hill-100039975045427/" target="_blank" rel="noopener" class="btn" style="background:#1877f2">
+              <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff;stroke:none"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+              Follow us on Facebook
+            </a>
+          </div>
         </div>
       </div>
       <div class="map fade">
@@ -570,8 +718,15 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fcol">
-        <span class="brand-txt"><b class="cond" style="font-family:'Barlow Condensed';font-size:1.4rem;text-transform:uppercase">Automotive Solutions</b><span>Māori Hill · Dunedin</span></span>
+        <!-- Real logo — converted from client-supplied PDF -->
+        <span class="footer-logo"><img src="logo-main.png" alt="Automotive Solutions Māori Hill"></span>
         <p>Your honest, family-run local mechanic in Māori Hill. WOF, servicing and full mechanical repairs — MTA &amp; AA approved.</p>
+        <div class="f-trust">
+          <!-- TRUST BADGE TO SWAP: official MTA logo -->
+          <span class="tb-ph" title="MTA — official logo to add">MTA</span>
+          <!-- TRUST BADGE TO SWAP: official AA Battery Service logo -->
+          <span class="tb-ph" title="AA Battery Service — official logo to add">AA</span>
+        </div>
       </div>
       <div class="fcol">
         <h4>Services</h4>
@@ -627,13 +782,20 @@
   // year
   document.getElementById('yr').textContent=(new Date()).getFullYear();
 
-  // booking form (demo)
+  // booking date picker — no past dates
+  const bkDate=document.getElementById('bk-date');
+  if(bkDate){
+    const d=new Date(); const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    bkDate.min=iso;
+  }
+
+  // booking form (demo — front-end only)
   function bookSubmit(ev){
     ev.preventDefault();
     const t=document.getElementById('toast');
-    document.getElementById('toastMsg').textContent='Thanks! Booking request received — we’ll call to confirm.';
+    document.getElementById('toastMsg').textContent='Thanks! We’ll be in touch to confirm your booking.';
     t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),3200);
+    setTimeout(()=>t.classList.remove('show'),3600);
     ev.target.reset();
     return false;
   }
