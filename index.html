@@ -162,14 +162,6 @@
   .bf .btn{width:100%;margin-top:18px}
   .bf .note{font-size:.8rem;color:var(--grey);text-align:center;margin-top:12px;display:flex;gap:7px;align-items:flex-start;justify-content:center}
   .bf .note svg{width:15px;height:15px;stroke:var(--blue);fill:none;stroke-width:2;flex:none;margin-top:2px}
-  /* WhatsApp booking card */
-  .wacard{text-align:center}
-  .wa-logo{display:inline-grid;place-items:center;width:66px;height:66px;margin:0 auto 6px}
-  .wa-logo svg{width:66px;height:66px}
-  .wacard h3{margin-bottom:4px}
-  .wa-btn{width:100%;background:#25D366;color:#fff;font-size:1.04rem;padding:16px 24px}
-  .wa-btn:hover{background:#1ebe57;box-shadow:0 12px 26px -12px rgba(37,211,102,.8)}
-
   /* ---------- REAL LOGO (converted from client PDFs) ---------- */
   .brand-logo{height:46px;width:auto;display:block}
   .hero-stamp{position:absolute;top:38px;right:22px;width:122px;height:122px;padding:15px;background:rgba(255,255,255,.94);border-radius:50%;box-shadow:0 14px 34px -12px rgba(0,0,0,.45);z-index:4}
@@ -546,18 +538,20 @@
     </div>
     <form class="bf fade" id="bookForm" onsubmit="return bookSubmit(event)">
       <h3 class="cond">Book a WOF or Service</h3>
-      <p class="bf-sub">Send us a request — we'll be in touch to confirm your booking.</p>
+      <p class="bf-sub">Pick a service and a day, and we'll be in touch to confirm your booking.</p>
 
       <label for="bk-service">What do you need?</label>
       <select id="bk-service" name="service" required>
         <option value="" disabled selected>Choose a service…</option>
-        <option>WOF — Warrant of Fitness</option>
+        <option>WOF / Warrant of Fitness</option>
         <option>Full Service</option>
+        <option>Servicing</option>
         <option>Tyres</option>
-        <option>Battery</option>
+        <option>AA Battery</option>
         <option>Brakes &amp; Clutch</option>
         <option>Exhaust</option>
-        <option>Diagnostics</option>
+        <option>Electronic Diagnostics</option>
+        <option>Transmission Flush &amp; Lube</option>
         <option>Other</option>
       </select>
 
@@ -571,18 +565,18 @@
         </div>
         <div>
           <label for="bk-phone">Phone</label>
-          <input id="bk-phone" name="phone" type="tel" required placeholder="Mobile or landline">
+          <input id="bk-phone" name="phone" type="tel" required placeholder="Best contact number">
         </div>
       </div>
 
       <label for="bk-vehicle">Vehicle</label>
-      <input id="bk-vehicle" name="vehicle" type="text" required placeholder="e.g. 2014 Toyota Corolla">
+      <input id="bk-vehicle" name="vehicle" type="text" required placeholder="Make, model &amp; rego — e.g. 2014 Toyota Corolla, ABC123">
 
       <label for="bk-notes">Notes (optional)</label>
       <textarea id="bk-notes" name="notes" rows="3" placeholder="Anything we should know?"></textarea>
 
-      <button type="submit" class="btn">Request booking</button>
-      <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg> This sends a booking <b style="margin:0 3px">request</b>, not an instant confirmed booking — we'll be in touch to confirm. (Demo form — the live version emails your request straight to the workshop.)</p>
+      <button type="submit" class="btn">Send booking request</button>
+      <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg> This sends a <b style="margin:0 3px">request</b> to the workshop — we'll reply to confirm your booking (not an instant confirmed time). Demo form for now; on go-live it emails your request straight to <b style="margin:0 0 0 3px">maorihill@outlook.co.nz</b>.</p>
     </form>
   </div>
 </section>
@@ -788,7 +782,7 @@
   function bookSubmit(ev){
     ev.preventDefault();
     const t=document.getElementById('toast');
-    document.getElementById('toastMsg').textContent='Thanks! We’ll be in touch to confirm your booking.';
+    document.getElementById('toastMsg').textContent='Thanks! We’ve got your request and we’ll be in touch to confirm a time that suits.';
     t.classList.add('show');
     setTimeout(()=>t.classList.remove('show'),3600);
     ev.target.reset();
